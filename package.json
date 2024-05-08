@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "postinstall": "cross-env-shell \"husky install && cd ./frontEnd && npm install && cd ../server && npm install\"",
+    "dev": "cross-env-shell 'concurrently -c green, yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm:dev-*\"'",
+    "dev-frontend": "cross-env-shell \"cd ./frontEnd && npm run dev\"",
+    "dev-backend": "cross-env-shell \"cd ./server && npm run dev\"",
+    "lint": "lint-staged",
+    "prebuild": "npm install",
+    "build": "cross-env-shell \"cd ./frontEnd && npm run build && cd ../server && build\"",
+    "start": "cross-env-shell \"cd ./server && npm run start\"",
+    "clean": "cross-env-shell \"rm -rf ./node_modules ./package-lock.json ./server/node_modules ./server/package-lock.json ./frontEnd/node_modules ./frontEnd/package-lock.json\"",
+    "prettier": "cd ./server && npm run prettier && cd ../frontEnd && npm run prettier",
+    "test": "npm run postinstall && npm audit fix && npm run lint && npm run prettier && cd ./server && npm run db:migrate && npm run db:seed && cd .. && npm run dev",
+    "commit": "npm run prettier && npm run lints && git add . && git restore --staged package.json .gitignore && git commit -m \"working...\" && git push origin main",
+    "lints": "cd ./server && npm run lint && cd ../frontEnd && npm run lint",
+    "jest": "cd ./server && npm run test"
+  },
+  "author": "ange230700",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5"
+  }
+}
