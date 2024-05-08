@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon server.js",
     "db:migrate": "node migrate.js",
     "db:seed": "node seed.js",
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "test": "jest",
     "prettier": "npx prettier --write .",
     "lint": "npx eslint .",
