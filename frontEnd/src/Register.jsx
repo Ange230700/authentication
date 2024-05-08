@@ -9,9 +9,9 @@ function Register() {
               <strong>Name</strong>
             </label>
             <input
-              type=""
-              placeholder=""
-              name=""
+              type="text"
+              placeholder="Enter your name"
+              name="name"
               className="form-control rounded-0"
             />
           </div>
@@ -20,9 +20,9 @@ function Register() {
               <strong>Email</strong>
             </label>
             <input
-              type=""
-              placeholder=""
-              name=""
+              type="email"
+              placeholder="Enter your email"
+              name="email"
               className="form-control rounded-0"
             />
           </div>
@@ -31,14 +31,21 @@ function Register() {
               <strong>Password</strong>
             </label>
             <input
-              type=""
-              placeholder=""
-              name=""
+              type="password"
+              placeholder="Enter your password"
+              name="password"
               className="form-control rounded-0"
             />
           </div>
           <button type="submit" className="btn btn-success w-100 rounded-0">
             Sign up
+          </button>
+          <p>You agree to our terms and policies.</p>
+          <button
+            type="button"
+            className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none"
+          >
+            Login
           </button>
         </form>
       </div>
